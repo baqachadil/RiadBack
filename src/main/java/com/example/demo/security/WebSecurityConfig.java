@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		
 		//We use the JWTAuthorization filter that we created
-		http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
+		//http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 		
 		//the register API is accessible without authentication
 		http.authorizeRequests().antMatchers("/login").permitAll();
@@ -45,10 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 		//all APIs require authentication 
-		http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().anyRequest().authenticated();
 		
 		//We use the JWTAuthentication filter that we created
-		http.addFilter(new JWTAuthenticationFilter(authenticationManager()));
+		//http.addFilter(new JWTAuthenticationFilter(authenticationManager()));
 				
 	}
 	

@@ -28,7 +28,7 @@ public class ReservationApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		userService.AddRole(new Role(null,"ADMIN"));
+		/*userService.AddRole(new Role(null,"ADMIN"));
 		userService.AddRole(new Role(null,"USER"));
 				
 		userService.AddUSer(new Utilisateur(null,"BAQACH","Adil","N 09 RUE ESSAADIYNE AGADIR","0673937060","baqachadil@gmail.com","Admin1234",null,null));
@@ -37,7 +37,7 @@ public class ReservationApplication implements CommandLineRunner {
 		userService.addRoleToUser("baqachadil@gmail.com", "ADMIN");
 		userService.addRoleToUser("baqachadil@gmail.com", "USER");
 		
-		userService.addRoleToUser("khalil@gmail.com", "USER");
+		userService.addRoleToUser("khalil@gmail.com", "USER");*/
 		
 	}
 
