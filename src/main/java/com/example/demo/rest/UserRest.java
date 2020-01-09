@@ -21,9 +21,7 @@ public class UserRest {
 		Utilisateur test = userService.findUserByUserNamme(user.getUsername());
 		if(test!=null) throw new RuntimeException("User already exists !!");
 		else {
-			Utilisateur response = userService.AddUSer(user);
-			userService.addRoleToUser(user.getUsername(), "USER");
-			return response;
+			return userService.AddUSer(user);
 		}
-	}
+	}		
 }
