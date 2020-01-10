@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,6 +23,7 @@ public class Reservation {
 	private Date date_fin;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Client client;
 	
 	@ManyToOne

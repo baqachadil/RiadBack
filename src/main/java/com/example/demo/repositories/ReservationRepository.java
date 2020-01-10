@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.demo.entities.Reservation;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RepositoryRestResource(collectionResourceRel = "reservations",path="reservations")
+@RepositoryRestResource()
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
 }
