@@ -12,6 +12,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.UniqueElements;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +36,7 @@ public class Client{
 	@OneToMany(mappedBy = "client")
 	private List<Facture> factures = new ArrayList<Facture>();
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "client")
 	private List<Reservation> reservations = new ArrayList<Reservation>();
 }
