@@ -8,4 +8,5 @@ public interface ClientService {
 	public Client addClient(Client client);
 	public Client findByCin(String cin);
 	public List<Client> getAllClients();
+	public void deleteClient(Client client);
 }

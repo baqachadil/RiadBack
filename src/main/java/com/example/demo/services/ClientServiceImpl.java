@@ -32,4 +32,10 @@ public class ClientServiceImpl implements ClientService {
 		return clientRepository.findAll();
 	}
 
+	@Override
+	public void deleteClient(Client client) {
+		clientRepository.delete(client);
+		
+	}
+
 }
