@@ -29,8 +29,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Utilisateur AddUSer(Utilisateur user) {		
 		//We crypt the user's password
-		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));		
-		return userRepository.save(user);		
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		Utilisateur test = userRepository.save(user);
+		addRoleToUser(test.getUsername(), "USER");
+		System.out.println(test);
+		return test;
 	}
 
 	@Override
@@ -40,13 +43,12 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public Role AddRole(Role role) {
-		roleRepository.save(role);
-		return null;
+		return roleRepository.save(role);
 	}
 
 	@Override
 	public void addRoleToUser(String username, String rolename) {
-		Role role = roleRepository.findByName(rolename);
+		Role role = roleRepository.findByName(rolename);		
 		Utilisateur user = userRepository.findByUsername(username);
 		user.getRoles().add(role);
 	}
